@@ -1,54 +1,40 @@
- class Rectangulo
-     attr_reader :largo, :ancho
-
-      def initialize(largo, ancho)
+class Rectangulo
+    def initialize(largo, ancho)
       @largo = largo
       @ancho = ancho
-      end
-      def lados
-          puts "Su largo es #{@largo} y su ancho es #{@ancho}"
-         
-   end
-
-     def perimetro(a, b)
-         @largo = a * 2  #Seteados con los argumentos pasados
-         @ancho = b * 2  #Seteado ancho con el argumento pasado
-
-         @largo *  @ancho
-     end
-
-     def area
-         @largo * @ancho
-     end
-
-end
-
-class Cuadrado
-    attr_reader :lado
-
-     def initialize(lado)
-     @lado = lado
-     end
-
+    end
     def lados
-     puts "Su lado es #{@lado}"
+      puts "largo: #{@largo} ancho: #{@ancho}"
     end
-
-    def perimetro(a, b)
-        @lado * 4
+    def perimetro
+      puts "perimetro: #{@largo+@ancho}"
     end
-
     def area
-        @lado * @lado
+      puts "area: #{@largo*@ancho}"
     end
-
-end
-
-recta1 = Rectangulo.new(1, 2)
-cuadra1 = Cuadrado.new(5)
-
-puts recta1.perimetro(2, 2)
-puts recta1.area
-
-puts cuadra1.perimetro(2, 2)
-puts cuadra1.area
+  end
+  
+  class Cuadrado
+    def initialize(lado)
+      @lado = lado
+    end
+    def lados
+      puts "lado: #{@lado}"
+    end
+    def perimetro
+      puts "perimetro: #{@lado*2}"
+    end
+    def area
+      puts "area: #{@lado**2}"
+    end
+  end
+  puts 'rectangulo'
+  rec = Rectangulo.new(3,5)
+  rec.lados
+  rec.perimetro
+  rec.area
+  puts 'cuadrado'
+  cuad = Cuadrado.new(8)
+  cuad.lados
+  cuad.perimetro
+  cuad.area
